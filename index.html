@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Foto</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #dbeafe, #f8fafc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0f172a;
+        }
+
+        .card {
+            width: 90%;
+            max-width: 760px;
+            background: white;
+            padding: 45px;
+            border-radius: 28px;
+            text-align: center;
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+        }
+
+        .badge {
+            display: inline-block;
+            background: #eff6ff;
+            color: #2563eb;
+            padding: 8px 18px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin: 10px 0;
+        }
+
+        p {
+            color: #64748b;
+            font-size: 16px;
+        }
+
+        .upload-box {
+            margin-top: 30px;
+            padding: 35px;
+            background: #eff6ff;
+            border: 2px dashed #3b82f6;
+            border-radius: 24px;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            max-width: 500px;
+            padding: 14px;
+            background: white;
+            border-radius: 14px;
+            border: 1px solid #cbd5e1;
+            margin: 18px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            border: none;
+            padding: 13px 24px;
+            border-radius: 14px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-dark {
+            background: #0f172a;
+            color: white;
+            margin-top: 22px;
+        }
+
+        .note {
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="badge">Galeri Foto</div>
+
+    <h1>Upload Foto</h1>
+    <p>Silakan pilih foto yang ingin diunggah. Sistem hanya menerima file gambar.</p>
+
+    <form action="upload.php" method="post" enctype="multipart/form-data" class="upload-box">
+        <h2>Pilih Foto</h2>
+
+        <input 
+            type="file" 
+            name="fileToUpload" 
+            accept="image/jpeg,image/png,image/gif,image/webp" 
+            required
+        >
+
+        <br>
+
+        <button type="submit" name="upload" class="btn btn-primary">
+            Upload Foto
+        </button>
+
+        <div class="note">
+            Format: JPG, JPEG, PNG, GIF, WEBP. Maksimal 2MB.
+        </div>
+    </form>
+
+    <a href="galeri.php" class="btn btn-dark">Lihat Galeri Foto</a>
+</div>
+
+</body>
+</html>
